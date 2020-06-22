@@ -1,18 +1,93 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+
+import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
+import {DataTableModule} from "@pascalhonegger/ng-datatable";
+import { DataFilterPipe }   from './components/book-list/data-filter.pipe';
+
+import { LoginService } from './services/login.service';
+import { UserService } from './services/user.service';
+import { PaymentService } from './services/payment.service';
+import { ShippingService } from './services/shipping.service';
+import { BookService } from './services/book.service';
+import { CartService } from './services/cart.service';
+import { CheckoutService } from './services/checkout.service';
+import { OrderService } from './services/order.service';
+
+import { MyAccountComponent } from './components/my-account/my-account.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { BookListComponent } from './components/book-list/book-list.component';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { OrderComponent } from './components/order/order.component';
+import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
+import { BestSellerComponent } from './components/best-seller/best-seller.component';
+import { HoursComponent } from './components/hours/hours.component';
+import { FaqComponent } from './components/faq/faq.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DataFilterPipe,
+    HomeComponent,
+    NavBarComponent,
+    MyAccountComponent,
+    MyProfileComponent,
+    BookListComponent,
+    BookDetailComponent,
+    ShoppingCartComponent,
+    OrderComponent,
+    OrderSummaryComponent,
+    BestSellerComponent,
+    HoursComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpModule,
+    DataTableModule,
+    MatTabsModule,
+    MatProgressSpinnerModule,
+    RouterModule.forRoot([
+      { path:'', component: HomeComponent},
+      { path:'home', component: HomeComponent},
+      { path:'myAccount', component: MyAccountComponent},
+      { path:'bookList', component: BookListComponent},
+      { path:'bookDetail/:id', component: BookDetailComponent},
+      { path:'shoppingCart', component: ShoppingCartComponent},
+      { path:'order', component: OrderComponent},
+      { path:'orderSummary', component: OrderSummaryComponent},
+      { path:'hours', component: HoursComponent},
+      { path:'faq', component: FaqComponent}
+      
+    ]),
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    LoginService,
+    UserService,
+    PaymentService,
+    ShippingService,
+    BookService,
+    CartService,
+    CheckoutService,
+    OrderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
