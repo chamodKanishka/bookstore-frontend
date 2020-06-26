@@ -22,7 +22,7 @@ export class UserService {
     return this.http.post(url, userInfo, {headers : tokenHeader});
   }
 
-  updateUserInfo(user:User, newPassword:string) {
+  updateUserInfo(user:User, newPassword:string, currentPassword: string) {
 
     let url = this.serverPath+"/user/updateUserInfo";
     let userInfo = {
@@ -30,7 +30,7 @@ export class UserService {
       "firstName" : user.firstName,
       "lastName" : user.lastName,
       "username" : user.username,
-      "currentPassword" : user.password,
+      "currentPassword" : currentPassword,
       "email" : user.email,
       "newPassword" : newPassword
     };

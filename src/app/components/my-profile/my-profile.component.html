@@ -34,7 +34,7 @@
                                         </div>
                                         <form (ngSubmit)="onUpdateUserInfo()">
                                             <input type="hidden" name="id" [(ngModel)]="user.id" />
-                                            <div class="bg-info" *ngIf="updateUserInfo">User info updated.</div>
+                                            <div class="bg-info" *ngIf="userService.updateUserInfo">User info updated.</div>
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-xs-6">

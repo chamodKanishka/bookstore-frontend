@@ -40,6 +40,7 @@ export class MyProfileComponent implements OnInit {
   public updateSuccess:boolean;
   public newPassword:string;
   public incorrectPassword:boolean;
+  public currentPassword: string;
   public userPayment: UserPayment = new UserPayment();
   public userBilling: UserBilling = new UserBilling();
   public userPaymentList: UserPayment[] = [];  
@@ -132,7 +133,7 @@ export class MyProfileComponent implements OnInit {
   }
 
   onUpdateUserInfo() {
-    this.userService.updateUserInfo(this.user, this.newPassword).subscribe(
+    this.userService.updateUserInfo(this.user, this.newPassword, this.currentPassword).subscribe(
       res => {
         console.log(res.text());
         this.updateSuccess = true;
