@@ -41,7 +41,8 @@ export class OrderComponent implements OnInit {
   public emptyPaymentList: boolean = true;
   public stateList: string[] = [];
   public shippingMethod:string;
-  public order:Order = new Order();
+  public order:Order = new Order()
+  public missingRequiredField: boolean;
 
   constructor(
   	public router:Router, 

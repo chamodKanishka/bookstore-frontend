@@ -11,6 +11,7 @@ import {UserPayment} from '../../models/user-payment';
 import {UserBilling} from '../../models/user-billing';
 import {UserShipping} from '../../models/user-shipping';
 import {Order} from '../../models/order';
+import {CartItem} from "../../models/cart-item";
 
 
 @Component({
@@ -47,6 +48,8 @@ export class MyProfileComponent implements OnInit {
   public userShipping: UserShipping = new UserShipping();
   public userShippingList: UserShipping[] = [];
   public stateList: string[] = [];
+  public updateUserPaymentInfo:boolean;
+  public  cartItemList: CartItem;
 
   public selectedProfileTab:number = 0;
   public selectedBillingTab:number = 0;

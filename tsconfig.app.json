@@ -6,9 +6,13 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "src/app/models/user.ts",
+//    "node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/index.js"
+
   ],
   "include": [
     "src/**/*.d.ts"
+
   ]
 }
