@@ -12,7 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 import {DataTableModule} from "@pascalhonegger/ng-datatable";
-import { DataFilterPipe }   from './components/book-list/data-filter.pipe';
+import { DataFilterPipe } from './components/book-list/data-filter.pipe';
 
 import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
@@ -37,6 +37,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -63,6 +69,12 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     DataTableModule,
     MatTabsModule,
     MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatMenuModule,
     RouterModule.forRoot([
       { path:'', component: HomeComponent},
       { path:'home', component: HomeComponent},

@@ -1,31 +1,35 @@
-<div class="page-top " style="width: 100%; height: 20px; background-color: #f46b42;"></div>
-<nav class="navbar navbar-default navbar-inverse">
-    <div class="container">
-        <div class="navbar-header">
-            <!-- The mobile navbar-toggle button can be safely removed since you do not need it in a non-responsive implementation -->
-            <a class="navbar-brand pointer" routerLink="/home" routerLinkActive="active">LE'S BOOKSTORE</a>
-        </div>
-        <!-- Note that the .navbar-collapse and .collapse classes have been removed from the #navbar -->
-        <div id="navbar">
-            <ul class="nav navbar-nav navbar-left">
-                <li ><a mat-button routerLink="/bookList" routerLinkActive="active">BOOK</a></li>
-                <form (ngSubmit)="onSearchByTitle()" class="navbar-form" method="post">
-                    <div class="form-group">
-                        <input type="text" name="searcyByTitle" [(ngModel)]="keyword" class="form-control" placeholder="Book title" />
-                    </div>
-                    <button type="submit" class="btn btn-default">Search</button>
-                </form>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    
-                </li>
-                <li *ngIf="!loggedIn" ><a mat-button routerLink="/myAccount" routerLinkActive="active">MY ACCOUNT</a></li>
-                <li *ngIf="loggedIn"><a mat-button routerLink="/shoppingCart" routerLinkActive="active">SHOPPING CART</a></li>
-                <li *ngIf="loggedIn"><a mat-button routerLink="/myProfile" routerLinkActive="active">MY PROFILE</a></li>
-                <li *ngIf="loggedIn"><a mat-button (click)="logout()">LOGOUT</a></li>
-            </ul>
-        </div>
-        <!--/.nav-collapse -->
-    </div>
-</nav>
+<!--<div class="page-top " style="width: 100%; height: 50px; background-color: #f46b42;"></div>-->
+<p>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-button routerLink="/home" routerLinkActive="active"><h2>Order Management System</h2></button>
+      <span class="example-spacer"></span>
+      <li type="none" ><button mat-button routerLink="/bookList" routerLinkActive="active">ITEMS</button></li>
+      <li type="none" *ngIf="!loggedIn"><button mat-button routerLink="/myAccount" routerLinkActive="active">MY ACCOUNT</button></li>
+      <li type="none" *ngIf="loggedIn"><button mat-button [matMenuTriggerFor]="menu">MENU</button></li>
+      <mat-menu #menu="matMenu">
+        <button *ngIf="loggedIn" mat-menu-item routerLink="/shoppingCart" routerLinkActive="active">SHOPPING CART</button>
+        <button *ngIf="loggedIn" mat-menu-item routerLink="/myProfile" routerLinkActive="active">MY PROFILE</button>
+        <button *ngIf="loggedIn" mat-menu-item (click)="logout()">LOGOUT</button>
+      </mat-menu>
+
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+      <span></span>
+      <span class="example-spacer"></span>
+      <div id="navbar">
+        <ul class="nav navbar-nav navbar-left">
+
+          <form (ngSubmit)="onSearchByTitle()" class="navbar-form" method="post">
+            <div class="form-group">
+              <input type="text" name="searcyByTitle" [(ngModel)]="keyword" class="form-control" placeholder="Book title" />
+            </div>
+            <button mat-flat-button color="primary">Search</button>
+          </form>
+        </ul>
+
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p>
