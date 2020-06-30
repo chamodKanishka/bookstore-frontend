@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
-import {AppConst} from '../constants/app-const';
 import {Http, Headers} from '@angular/http';
-import {User} from '../models/User';
+import {AppConst} from '../constants/app-const';
+import {User} from '../models/user';
 
 @Injectable()
 export class UserService {
-  private serverPath:string = AppConst.serverPath;
-  
+  private serverPath: string = AppConst.serverPath;
+
   constructor(private http:Http) { }
 
-  newUser(username:string, email:string) {
-    let url = this.serverPath+"/user/newUser";
-    let userInfo = {
-    	"username" : username,
-    	"email" : email
-    };
-    let tokenHeader = new Headers ({
-      'Content-Type': 'application/json',
-      'x-auth-token' : localStorage.getItem("xAuthToken")
-    });
-    return this.http.post(url, userInfo, {headers : tokenHeader});
+  newUser(username: string, email:string) {
+  	let url = this.serverPath+'/user/newUser';
+  	let userInfo = {
+  		"username" : username,
+  		"email" : email
+  	}
+  	let tokenHeader = new Headers({
+  		'Content-Type' : 'application/json',
+  		'x-auth-token' : localStorage.getItem('xAuthToken')
+  	});
+
+  	return this.http.post(url, JSON.stringify(userInfo), {headers : tokenHeader});
   }
 
-  updateUserInfo(user:User, newPassword:string, currentPassword: string) {
-
-    let url = this.serverPath+"/user/updateUserInfo";
+  updateUserInfo(user: User, newPassword: string, currentPassword: string) {
+    let url = this.serverPath + "/user/updateUserInfo";
     let userInfo = {
       "id" : user.id,
       "firstName" : user.firstName,
@@ -32,34 +32,38 @@ export class UserService {
       "username" : user.username,
       "currentPassword" : currentPassword,
       "email" : user.email,
-      "newPassword" : newPassword
+      "newPassword" :newPassword
     };
-    let tokenHeader = new Headers ({
-      'Content-Type': 'application/json',
+
+    let tokenHeader = new Headers({
+      'Content-Type' : 'application/json',
       'x-auth-token' : localStorage.getItem("xAuthToken")
     });
-    return this.http.post(url, JSON.stringify(userInfo), {headers : tokenHeader});
+    return this.http.post(url, JSON.stringify(userInfo), {headers:tokenHeader});
   }
 
   retrievePassword(email:string) {
-    let url = this.serverPath+"/user/forgetPassword";
-    let userInfo = {
-    	"email" : email
-    };
-    let tokenHeader = new Headers ({
-      'Content-Type': 'application/json',
-      'x-auth-token' : localStorage.getItem("xAuthToken")
-    });
-    return this.http.post(url, JSON.stringify(userInfo), {headers : tokenHeader});
+  	let url = this.serverPath+'/user/forgetPassword';
+  	let userInfo = {
+  		"email" : email
+  	}
+  	let tokenHeader = new Headers({
+  		'Content-Type' : 'application/json',
+  		'x-auth-token' : localStorage.getItem('xAuthToken')
+  	});
+
+  	return this.http.post(url, JSON.stringify(userInfo), {headers : tokenHeader});
   }
 
-  getCurrentUser(){
-    let url = this.serverPath+"/user/getCurrentUser";
+  getCurrentUser() {
+    let url = this.serverPath+'/user/getCurrentUser';
     
-    let tokenHeader = new Headers ({
-      'Content-Type': 'application/json',
-      'x-auth-token' : localStorage.getItem("xAuthToken")
+    let tokenHeader = new Headers({
+      'Content-Type' : 'application/json',
+      'x-auth-token' : localStorage.getItem('xAuthToken')
     });
+
     return this.http.get(url, {headers : tokenHeader});
   }
+
 }

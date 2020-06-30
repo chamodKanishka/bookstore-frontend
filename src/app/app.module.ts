@@ -74,7 +74,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
       { path:'orderSummary', component: OrderSummaryComponent},
       { path:'hours', component: HoursComponent},
       { path:'faq', component: FaqComponent}
-      
+
     ]),
     BrowserAnimationsModule
   ],
