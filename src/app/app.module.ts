@@ -43,6 +43,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -75,10 +76,12 @@ import {MatMenuModule} from '@angular/material/menu';
     MatStepperModule,
     MatFormFieldModule,
     MatMenuModule,
+    MatSelectModule,
     RouterModule.forRoot([
       { path:'', component: HomeComponent},
       { path:'home', component: HomeComponent},
       { path:'myAccount', component: MyAccountComponent},
+      { path:'myProfile', component: MyProfileComponent},
       { path:'bookList', component: BookListComponent},
       { path:'bookDetail/:id', component: BookDetailComponent},
       { path:'shoppingCart', component: ShoppingCartComponent},
