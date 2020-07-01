@@ -3,11 +3,7 @@
         <div class="col-xs-8">
             <h2 class="section-headline"><span>My Account</span></h2>
         </div>
-<!--        <div class="col-xs-4">-->
-<!--            <img src="../../../assets/image/logo.png" class="img-responsive right" style="width:400px; z-index: 1;" />-->
-<!--        </div>-->
-<!--        <img class="img-responsive" src="../../../assets/image/wood.png" style="position: absolute;margin-top: 90px;z-index: -2;" />-->
-    </div>
+  </div>
     <hr style="position: absolute; width:85%; height:6px; background-color: #333; z-index: -1; margin-top: -170px " />
     <div *ngIf="!dataFetched" style="margin-top: 50px;">
         <div class="row">
@@ -34,14 +30,14 @@
                                         </div>
                                         <form (ngSubmit)="onUpdateUserInfo()">
                                             <input type="hidden" name="id" [(ngModel)]="user.id" />
-                                            <div class="bg-info" *ngIf="userService.updateUserInfo">User info updated.</div>
+                                            <div class="bg-info" type="hidden" *ngIf="userService.updateUserInfo">User info updated.</div>
                                             <div class="form-group">
                                                 <div class="row">
-                                                    <div class="col-xs-6">
+                                                    <div class="col-md-6">
                                                         <label for="firstName">First Name</label>
                                                         <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="user.firstName" />
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-md-6">
                                                         <label for="lastName">Last Name</label>
                                                         <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="user.lastName" />
                                                     </div>
@@ -102,12 +98,13 @@
                                                 </table>
                                                 <div *ngIf="displayOrderDetail">
                                                     <div class="row">
-                                                        <div class="col-xs-12">
-                                                            <div class="text-center">
+                                                        <div class="col-md-12">
+                                                          <div class="col-md-2"></div>
+                                                            <div class="text-center col-md-8">
                                                                 <h2>Order Detail for purchase #<span>{{order.id}}</span></h2>
                                                             </div>
                                                             <hr/>
-                                                            <div class="row">
+                                                            <div style="margin-left: 20px;">
                                                                 <div class="col-xs-4">
                                                                     <div class="panel panel-default height">
                                                                         <div class="panel-heading"><strong>Billing Details</strong>
@@ -126,7 +123,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-xs-4">
+                                                                <div class="col-xs-4" style="margin-left: 20px;">
                                                                     <div class="panel panel-default height">
                                                                         <div class="panel-heading"><strong>Payment Information</strong>
                                                                         </div>
@@ -168,7 +165,7 @@
                                                                 <div class="panel-heading">
                                                                     <h3 class="text-center"><strong>Order summary</strong></h3>
                                                                 </div>
-                                                                <div class="panel-body">
+                                                                <div class="panel-body" style="margin-left: 20px;">
                                                                     <div class="table-responsive">
                                                                         <table class="table table-condensed">
                                                                             <thead>
@@ -264,7 +261,7 @@
                                                 </form>
                                             </mat-tab>
                                             <mat-tab label="Add(Update) Credit Card">
-                                                <form (ngSubmit)="onNewPayment()" method="post">
+                                                <form style="margin-left: 20px;" (ngSubmit)="onNewPayment()" method="post">
                                                     <div class="bg-info" *ngIf="updateUserPaymentInfo">User info updated.</div>
                                                     <input hidden="hidden" name="id" [(ngModel)]="userPayment.id" />
                                                     <div class="form-group">
@@ -287,7 +284,7 @@
                                                     <div class="form-group">
                                                         <input type="text" class="form-control" placeholder="Street Address 2" name="userBillingStreet2" [(ngModel)]="userBilling.userBillingStreet2" />
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row" style="margin-left: 20px;">
                                                         <div class="col-xs-4">
                                                             <div class="form-group">
                                                                 <label for="billingCity">* City</label>
@@ -316,7 +313,7 @@
                                                     <div class="form-group">
                                                         <h4>Credit Card Information</h4>
                                                     </div>
-                                                    <div class="row">
+                                                    <div  style="margin-left: 20px;" class="row">
                                                         <div class="col-xs-12">
                                                             <img src="../../../assets/image/creditcard.png" class="img-responsive" />
                                                             <br/>
@@ -346,7 +343,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row" style="margin-left: 20px;">
                                                         <div class="col-xs-7 col-mat-7">
                                                             <div class="form-group">
                                                                 <label>* Expiration Date</label>
@@ -442,7 +439,7 @@
                                                 </form>
                                             </mat-tab>
                                             <mat-tab label="Add(Update) Shipping Address">
-                                                <form (ngSubmit)="onNewShipping()" method="post">
+                                                <form (ngSubmit)="onNewShipping()" method="post" style="margin-left: 20px;">
                                                     <input hidden="hidden" name="id" [(ngModel)]="userShipping.id" />
                                                     <!--Shipping Address-->
                                                     <div class="form-group">
@@ -459,7 +456,7 @@
                                                     <div class="form-group">
                                                         <input type="text" class="form-control" placeholder="Street Address 2" name="userShippingStreet2" [(ngModel)]="userShipping.userShippingStreet2" />
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row" style="margin-left: 20px;">
                                                         <div class="col-xs-4">
                                                             <div class="form-group">
                                                                 <label for="shippingCity">* City</label>

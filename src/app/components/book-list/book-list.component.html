@@ -45,13 +45,12 @@
                                 <h4 (click)="onSelect(book)" style="margin-top: 20px;cursor: pointer;">{{book.title}}</h4>
                                 <span>{{book.publicationDate}}</span>
                                 <p>{{book.author}}</p>
-                                <a href="#"><span>{{book.format | uppercase}}</span></a>
-                                <span>{{book.numberOfPages}}</span><span> pages</span>
+                                <span>{{book.numberOfPages}}</span><span> sub-items</span>
                                 <br/>
                                 <a (click)="onSelect(book)"><span
                                             style="font-size: x-large; color: #db3208">LKR <span>{{book.ourPrice | number : '1.2-2'}}</span></span></a>
                                 <span style=" text-decoration: line-through;">LKR <span
-                                            >{{book.listPrice | number : '1.2-2'}}</span></span>
+                                            > {{book.listPrice | number : '1.2-2'}}</span></span>
                                 <p>{{book.description | slice:0:500}}</p>
                             </div>
                         </div>
