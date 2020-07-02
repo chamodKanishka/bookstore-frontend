@@ -13,38 +13,38 @@ import {AppConst} from '../../constants/app-const';
 })
 export class ItemDetailComponent implements OnInit {
 
-  public bookId: number;
-  public book: Item = new Item();
+  public itemId: number;
+  public item: Item = new Item();
   public serverPath = AppConst.serverPath;
   public numberList: number[]=[1,2,3,4,5,6,7,8,9];
   public qty:number;
 
-  public addBookSuccess:boolean = false;
+  public addItemSuccess:boolean = false;
   public notEnoughStock:boolean = false;
 
   constructor(
-    public bookService: ItemService,
+    public itemService: ItemService,
     public cartService: CartService,
     public route: ActivatedRoute, 
     public router:Router
     ) {
     this.route.params.forEach((params: Params) => {
-      this.bookId = Number.parseInt(params['id']);
+      this.itemId = Number.parseInt(params['id']);
     });
 
-    this.bookService.getBook(this.bookId).subscribe(
+    this.itemService.getItem(this.itemId).subscribe(
       res => {
-        this.book=res.json();
+        this.item=res.json();
       },
       error => console.log(error)
     );
   }
 
   onAddToCart() {
-    this.cartService.addItem(this.bookId, this.qty).subscribe(
+    this.cartService.addItem(this.itemId, this.qty).subscribe(
       res => {
         console.log(res.text());
-        this.addBookSuccess=true;
+        this.addItemSuccess=true;
       },
       err => {
         console.log(err.text());

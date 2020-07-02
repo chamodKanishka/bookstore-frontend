@@ -17,7 +17,7 @@ export class ItemService {
   	return this.http.get(url, {headers: tokenHeader});
   }
 
-  getBook(id:number) {
+  getItem(id:number) {
   	let url = AppConst.serverPath+"/item/"+id;
 
   	let tokenHeader = new Headers({

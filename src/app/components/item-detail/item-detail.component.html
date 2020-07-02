@@ -12,23 +12,23 @@
     <div class="row">
         <div class="row" style="margin-top: 120px;">
             <div class="col-xs-3">
-                <button class="button" mat-flat-button color="warn" routerLink="/bookList" routerLinkActive="active">Back to item list</button>
+                <button class="button" mat-flat-button color="warn" routerLink="/itemList" routerLinkActive="active">Back to item list</button>
                 <br />
-                <img class="img-responsive" src="{{serverPath}}/image/book/{{book.id}}.png" />
+                <img class="img-responsive" src="{{serverPath}}/image/item/{{item.id}}.png" />
             </div>
             <div class="col-xs-9">
-                <h3><span *ngIf="addBookSuccess" style="color: forestgreen"><i class="fa fa-check" aria-hidden="true" style="color: forestgreen"></i>Added to cart.</span></h3>
-                <h3><span *ngIf="notEnoughStock" style="color: red">Oops, only <span>{{book.inStockNumber}}</span> In Stock.</span></h3>
-                <h3 class="details">{{book.title}}</h3>
+                <h3><span *ngIf="addItemSuccess" style="color: forestgreen"><i class="fa fa-check" aria-hidden="true" style="color: forestgreen"></i>Added to cart.</span></h3>
+                <h3><span *ngIf="notEnoughStock" style="color: red">Oops, only <span>{{item.inStockNumber}}</span> In Stock.</span></h3>
+                <h3 class="details">{{item.title}}</h3>
                 <div class="row">
                     <div details class="col-xs-5 details">
-                        <h5><strong>Owner: </strong> <span>{{book.author}}</span></h5>
-                        <p><strong>Manufacture: </strong> <span>{{book.publisher}}</span></p>
-                        <p><strong>Manufactured Date: </strong> <span>{{book.publicationDate}}</span></p>
-                        <p><strong>Category: </strong> <span>{{book.category}}</span></p>
-                        <p><strong>Items: </strong> <span>{{book.numberOfPages}}</span> Sub-Items</p>
-                        <p><strong>SKU: </strong> <span>{{book.isbn}}</span></p>
-                        <p><strong>Weight: </strong> <span>{{book.shippingWeight}}</span> kg</p>
+                        <h5><strong>Owner: </strong> <span>{{item.author}}</span></h5>
+                        <p><strong>Manufacture: </strong> <span>{{item.publisher}}</span></p>
+                        <p><strong>Manufactured Date: </strong> <span>{{item.publicationDate}}</span></p>
+                        <p><strong>Category: </strong> <span>{{item.category}}</span></p>
+                        <p><strong>Items: </strong> <span>{{item.numberOfPages}}</span> Sub-Items</p>
+                        <p><strong>SKU: </strong> <span>{{item.isbn}}</span></p>
+                        <p><strong>Weight: </strong> <span>{{item.shippingWeight}}</span> kg</p>
                     </div>
                     <div class="col-xs-7">
                         <div class="panel panel-default details2" style="border-width: 5px; margin-top: 20px;">
@@ -36,11 +36,11 @@
                                 <div class="row">
                                     <div class="col-xs-6">
                                         <h4>Our Price: <span style="color: #db3208;">LKR<span
-                                                >{{book.ourPrice | number : '1.2-2'}}</span></span></h4>
+                                                >{{item.ourPrice | number : '1.2-2'}}</span></span></h4>
                                         <p>List Price: <span style="text-decoration: line-through;">LKR<span
-                                                >{{book.listPrice | number : '1.2-2'}}</span></span>
+                                                >{{item.listPrice | number : '1.2-2'}}</span></span>
                                         </p>
-                                        <p>You Save: LKR<span>{{book.listPrice-book.ourPrice | number : '1.2-2'}}</span>
+                                        <p>You Save: LKR<span>{{item.listPrice-item.ourPrice | number : '1.2-2'}}</span>
                                         </p>
                                         <span>Qty: </span>
                                         <select [(ngModel)]="qty" class="browser-default" style="width: 50px;display: inline;">
@@ -48,11 +48,11 @@
                                         </select>
                                     </div>
                                     <div class="col-xs-6">
-                                        <h4 *ngIf="book.inStockNumber>10" style="color: green;">In Stock</h4>
-                                        <h4 *ngIf="book.inStockNumber<10 && book.inStockNumber>0" style="color: green;"> Only <span>{{book.inStockNumber}}</span> In
+                                        <h4 *ngIf="item.inStockNumber>10" style="color: green;">In Stock</h4>
+                                        <h4 *ngIf="item.inStockNumber<10 && item.inStockNumber>0" style="color: green;"> Only <span>{{item.inStockNumber}}</span> In
                                             Stock</h4>
-                                        <h4 *ngIf="book.inStockNumber==0" style="color: darkred;">Unavailable</h4>
-                                        <button class="button" mat-raised-button [disabled]="book.inStockNumber==0" (click)="onAddToCart()" class="mat-primary">
+                                        <h4 *ngIf="item.inStockNumber==0" style="color: darkred;">Unavailable</h4>
+                                        <button class="button" mat-raised-button [disabled]="item.inStockNumber==0" (click)="onAddToCart()" class="mat-primary">
                                             Add to Cart
                                         </button>
                                     </div>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <hr/>
-              <p class="details"><strong>Description:</strong> <span>{{book.description}}</span></p>
+              <p class="details"><strong>Description:</strong> <span>{{item.description}}</span></p>
             </div>
         </div>
     </div>
