@@ -15,31 +15,31 @@ export class ItemListComponent implements OnInit {
   public filterQuery = "";
   public rowsOnPage = 10;
 
-  public selectedBook : Item;
-  public bookList: Item[];
+  public selectedItem : Item;
+  public itemList: Item[];
   public serverPath = AppConst.serverPath;
 
-  constructor(public bookService:ItemService, public router: Router, public http: Http, public route:ActivatedRoute) {
+  constructor(public itemService:ItemService, public router: Router, public http: Http, public route:ActivatedRoute) {
     
   }
 
-  onSelect(book:Item) {
-    this.selectedBook = book;
-    this.router.navigate(['/bookDetail', this.selectedBook.id]);
+  onSelect(item:Item) {
+    this.selectedItem = item;
+    this.router.navigate(['/itemDetail', this.selectedItem.id]);
   }
 
   ngOnInit() {
 
 
     this.route.queryParams.subscribe(params => {
-      if (params['bookList']){
-        console.log("filtered book list");
-        this.bookList = JSON.parse(params['bookList']);
+      if (params['itemList']){
+        console.log("filtered item list");
+        this.itemList = JSON.parse(params['itemList']);
       } else {
-        this.bookService.getBookList().subscribe(
+        this.itemService.getItemList().subscribe(
           res => {
             console.log(res.json());
-            this.bookList=res.json();
+            this.itemList=res.json();
           },
           err => {
             console.log(err);

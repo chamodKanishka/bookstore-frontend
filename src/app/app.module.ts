@@ -82,7 +82,7 @@ import {MatSelectModule} from '@angular/material/select';
       { path:'home', component: HomeComponent},
       { path:'myAccount', component: MyAccountComponent},
       { path:'myProfile', component: MyProfileComponent},
-      { path:'bookList', component: ItemListComponent},
+      { path:'itemList', component: ItemListComponent},
       { path:'bookDetail/:id', component: ItemDetailComponent},
       { path:'shoppingCart', component: ShoppingCartComponent},
       { path:'order', component: OrderComponent},

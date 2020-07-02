@@ -42,7 +42,7 @@ export class NavBarComponent implements OnInit {
             }
         };
 
-        this.router.navigate(['/bookList'], navigationExtras);
+        this.router.navigate(['/itemList'], navigationExtras);
       },
       error => {
         console.log(error);

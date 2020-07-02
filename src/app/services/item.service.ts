@@ -7,8 +7,8 @@ export class ItemService {
 
   constructor(private http:Http) { }
 
-  getBookList() {
-  	let url = AppConst.serverPath+"/book/bookList";
+  getItemList() {
+  	let url = AppConst.serverPath+"/item/itemList";
 
   	let tokenHeader = new Headers({
   		'Content-Type' : 'application/json',
@@ -18,7 +18,7 @@ export class ItemService {
   }
 
   getBook(id:number) {
-  	let url = AppConst.serverPath+"/book/"+id;
+  	let url = AppConst.serverPath+"/item/"+id;
 
   	let tokenHeader = new Headers({
   		'Content-Type' : 'application/json',
@@ -28,7 +28,7 @@ export class ItemService {
   }
 
   searchBook(keyword:string) {
-  	let url = AppConst.serverPath+"/book/searchBook";
+  	let url = AppConst.serverPath+"/item/searchBook";
 
   	let tokenHeader = new Headers({
   		'Content-Type' : 'application/json',
