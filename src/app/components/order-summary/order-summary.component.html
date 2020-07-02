@@ -22,7 +22,7 @@
             <div class="row " *ngFor="let cartItem of cartItemList ">
                 <hr/>
                 <div class="col-xs-2 ">
-                    <a mat-button ><img class="img-responsive shelf-book" src="{{serverPath}}/image/book/{{cartItem.item.id}}.png" style="width:70px;" /></a>
+                    <a mat-button ><img class="img-responsive shelf-item" src="{{serverPath}}/image/item/{{cartItem.item.id}}.png" style="width:70px;" /></a>
                 </div>
                 <div class="col-xs-6 ">
                     <a class="pointer" ><h4>{{cartItem.item.title}}</h4></a>

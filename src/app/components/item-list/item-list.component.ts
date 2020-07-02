@@ -6,7 +6,7 @@ import {Http} from "@angular/http";
 import {AppConst} from '../../constants/app-const';
 
 @Component({
-  selector: 'app-book-list',
+  selector: 'app-item-list',
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.css']
 })
