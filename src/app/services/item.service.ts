@@ -3,7 +3,7 @@ import {Http, Headers} from '@angular/http';
 import {AppConst} from '../constants/app-const';
 
 @Injectable()
-export class BookService {
+export class ItemService {
 
   constructor(private http:Http) { }
 

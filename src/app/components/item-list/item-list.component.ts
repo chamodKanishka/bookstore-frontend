@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import {Item} from "../../models/item";
-import {BookService} from "../../services/book.service";
+import {ItemService} from "../../services/item.service";
 import {Params, ActivatedRoute,Router} from "@angular/router";
 import {Http} from "@angular/http";
 import {AppConst} from '../../constants/app-const';
@@ -19,7 +19,7 @@ export class ItemListComponent implements OnInit {
   public bookList: Item[];
   public serverPath = AppConst.serverPath;
 
-  constructor(public bookService:BookService, public router: Router, public http: Http, public route:ActivatedRoute) {
+  constructor(public bookService:ItemService, public router: Router, public http: Http, public route:ActivatedRoute) {
     
   }
 

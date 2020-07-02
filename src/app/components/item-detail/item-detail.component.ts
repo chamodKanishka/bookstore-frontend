@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import {Item} from "../../models/item";
-import {BookService} from "../../services/book.service";
+import {ItemService} from "../../services/item.service";
 import {CartService} from '../../services/cart.service';
 import {Params, ActivatedRoute,Router} from "@angular/router";
 import {Http} from "@angular/http";
@@ -23,7 +23,7 @@ export class ItemDetailComponent implements OnInit {
   public notEnoughStock:boolean = false;
 
   constructor(
-    public bookService: BookService, 
+    public bookService: ItemService,
     public cartService: CartService,
     public route: ActivatedRoute, 
     public router:Router

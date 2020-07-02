@@ -18,7 +18,7 @@ import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { PaymentService } from './services/payment.service';
 import { ShippingService } from './services/shipping.service';
-import { BookService } from './services/book.service';
+import { ItemService } from './services/item.service';
 import { CartService } from './services/cart.service';
 import { CheckoutService } from './services/checkout.service';
 import { OrderService } from './services/order.service';
@@ -98,7 +98,7 @@ import {MatSelectModule} from '@angular/material/select';
     UserService,
     PaymentService,
     ShippingService,
-    BookService,
+    ItemService,
     CartService,
     CheckoutService,
     OrderService
