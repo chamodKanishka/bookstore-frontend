@@ -58,10 +58,10 @@
                                 <div style="margin-top:20px;">
                                     <div *ngIf="emailNotExists" class="alert alert-danger">Email doesn't exists.</div>
                                     <div *ngIf="forgetPasswordEmailSent" class="alert alert-success">Email sent.</div>
-                                    <form (ngSubmit)="onForgetPassword()" method="post">
+                                    <form (ngSubmit)="onForgetPassword()">
                                         <div class="form-group">
                                             <label for="recoverEmail">Your Email *</label>
-                                            <input type="text" class="form-control" id="recoverEmail" name="email" />
+                                            <input type="email" class="form-control" id="recoverEmail" name="recoverEmail" [(ngModel)]="recoverEmail" required="required" />
                                             <p style="color: #828282;"> Enter your registered email address.</p>
                                         </div>
                                         <button mat-raised-button type="submit" class="mat-primary">Submit</button>
