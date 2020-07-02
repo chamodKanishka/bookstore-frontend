@@ -43,9 +43,9 @@
                             </div>
                             <div class="col-md-9">
                                 <h4 (click)="onSelect(item)" style="margin-top: 20px;cursor: pointer;">{{item.title}}</h4>
-                                <span>{{item.publicationDate}}</span>
-                                <p>{{item.author}}</p>
-                                <span>{{item.numberOfPages}}</span><span> sub-items</span>
+                                <span>{{item.manufacturedDate}}</span>
+                                <p>{{item.owner}}</p>
+                                <span>{{item.numberOfSubItems}}</span><span> sub-items</span>
                                 <br/>
                                 <a (click)="onSelect(item)"><span
                                             style="font-size: x-large; color: #db3208">LKR <span>{{item.ourPrice | number : '1.2-2'}}</span></span></a>
