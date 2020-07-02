@@ -12,7 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 import {DataTableModule} from "@pascalhonegger/ng-datatable";
-import { DataFilterPipe } from './components/book-list/data-filter.pipe';
+import { DataFilterPipe } from './components/item-list/data-filter.pipe';
 
 import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
@@ -25,8 +25,8 @@ import { OrderService } from './services/order.service';
 
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
-import { BookListComponent } from './components/book-list/book-list.component';
-import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { ItemListComponent } from './components/item-list/item-list.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
@@ -53,8 +53,8 @@ import {MatSelectModule} from '@angular/material/select';
     NavBarComponent,
     MyAccountComponent,
     MyProfileComponent,
-    BookListComponent,
-    BookDetailComponent,
+    ItemListComponent,
+    ItemDetailComponent,
     ShoppingCartComponent,
     OrderComponent,
     OrderSummaryComponent,
@@ -82,8 +82,8 @@ import {MatSelectModule} from '@angular/material/select';
       { path:'home', component: HomeComponent},
       { path:'myAccount', component: MyAccountComponent},
       { path:'myProfile', component: MyProfileComponent},
-      { path:'bookList', component: BookListComponent},
-      { path:'bookDetail/:id', component: BookDetailComponent},
+      { path:'bookList', component: ItemListComponent},
+      { path:'bookDetail/:id', component: ItemDetailComponent},
       { path:'shoppingCart', component: ShoppingCartComponent},
       { path:'order', component: OrderComponent},
       { path:'orderSummary', component: OrderSummaryComponent},

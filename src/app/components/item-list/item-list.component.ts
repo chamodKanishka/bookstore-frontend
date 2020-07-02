@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import {Book} from "../../models/book";
+import {Item} from "../../models/item";
 import {BookService} from "../../services/book.service";
 import {Params, ActivatedRoute,Router} from "@angular/router";
 import {Http} from "@angular/http";
@@ -7,23 +7,23 @@ import {AppConst} from '../../constants/app-const';
 
 @Component({
   selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css']
+  templateUrl: './item-list.component.html',
+  styleUrls: ['./item-list.component.css']
 })
-export class BookListComponent implements OnInit {
+export class ItemListComponent implements OnInit {
 
   public filterQuery = "";
   public rowsOnPage = 10;
 
-  public selectedBook : Book;
-  public bookList: Book[];
+  public selectedBook : Item;
+  public bookList: Item[];
   public serverPath = AppConst.serverPath;
 
   constructor(public bookService:BookService, public router: Router, public http: Http, public route:ActivatedRoute) {
     
   }
 
-  onSelect(book:Book) {
+  onSelect(book:Item) {
     this.selectedBook = book;
     this.router.navigate(['/bookDetail', this.selectedBook.id]);
   }

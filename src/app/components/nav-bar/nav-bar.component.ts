@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../../services/login.service";
 import {Router, NavigationExtras} from "@angular/router";
 import {BookService} from "../../services/book.service";
-import {Book} from "../../models/book";
+import {Item} from "../../models/item";
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,7 +12,7 @@ import {Book} from "../../models/book";
 export class NavBarComponent implements OnInit {
   public loggedIn = false;
   public keyword:string;
-  public bookList:Book[] = [];
+  public bookList:Item[] = [];
 
   constructor(
     public loginService: LoginService, 

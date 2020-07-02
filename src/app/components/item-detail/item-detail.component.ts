@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import {Book} from "../../models/book";
+import {Item} from "../../models/item";
 import {BookService} from "../../services/book.service";
 import {CartService} from '../../services/cart.service';
 import {Params, ActivatedRoute,Router} from "@angular/router";
@@ -8,13 +8,13 @@ import {AppConst} from '../../constants/app-const';
 
 @Component({
   selector: 'app-book-detail',
-  templateUrl: './book-detail.component.html',
-  styleUrls: ['./book-detail.component.css']
+  templateUrl: './item-detail.component.html',
+  styleUrls: ['./item-detail.component.css']
 })
-export class BookDetailComponent implements OnInit {
+export class ItemDetailComponent implements OnInit {
 
   public bookId: number;
-  public book: Book = new Book();
+  public book: Item = new Item();
   public serverPath = AppConst.serverPath;
   public numberList: number[]=[1,2,3,4,5,6,7,8,9];
   public qty:number;

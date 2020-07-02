@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppConst} from '../../constants/app-const';
-import {Book} from '../../models/book';
+import {Item} from '../../models/item';
 import {Router, NavigationExtras} from "@angular/router";
 import {CartService} from '../../services/cart.service';
 import {ShippingService} from '../../services/shipping.service';
@@ -23,7 +23,7 @@ import {Order} from '../../models/order';
 })
 export class OrderComponent implements OnInit {
   public serverPath = AppConst.serverPath;
-  public selectedBook: Book;
+  public selectedBook: Item;
   public cartItemList: CartItem[] = [];
   public cartItemNumber: number;
   public shoppingCart: ShoppingCart = new ShoppingCart();
@@ -52,7 +52,7 @@ export class OrderComponent implements OnInit {
   	public checkoutService: CheckoutService
   	) { }
 
-  onSelect(book:Book) {
+  onSelect(book:Item) {
     this.selectedBook = book;
     this.router.navigate(['/bookDetail', this.selectedBook.id]);
   }
