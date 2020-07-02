@@ -5,7 +5,7 @@ export class CartItem {
 	public id: number;
 	public qty: number;
 	public subtotal: number;
-	public book: Item;
+	public item: Item;
 	public shoppingCart: ShoppingCart
 	public toUpdate:boolean;
 }

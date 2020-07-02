@@ -10,7 +10,7 @@ export class CartService {
   addItem(id:number, qty: number) {
   	let url = AppConst.serverPath+"/cart/add";
   	let cartItemInfo = {
-  		"bookId" : id,
+  		"itemId" : id,
   		"qty" : qty
   	}
   	let tokenHeader = new Headers({

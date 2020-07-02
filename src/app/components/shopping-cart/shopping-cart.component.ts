@@ -13,7 +13,7 @@ import {ShoppingCart} from '../../models/shopping-cart';
 })
 export class ShoppingCartComponent implements OnInit {
   public serverPath = AppConst.serverPath;
-  public selectedBook: Item;
+  public selectedItem: Item;
   public cartItemList: CartItem[] = [];
   public cartItemNumber: number;
   public shoppingCart: ShoppingCart = new ShoppingCart();
@@ -23,9 +23,9 @@ export class ShoppingCartComponent implements OnInit {
 
   constructor(public router:Router, public cartService: CartService) { }
 
-  onSelect(book:Item) {
-    this.selectedBook = book;
-    this.router.navigate(['/bookDetail', this.selectedBook.id]);
+  onSelect(item:Item) {
+    this.selectedItem = item;
+    this.router.navigate(['/itemDetail', this.selectedItem.id]);
   }
 
   onRemoveCartItem(cartItem: CartItem) {
@@ -84,7 +84,7 @@ export class ShoppingCartComponent implements OnInit {
     } else {
 
       for (let item of this.cartItemList) {
-        if(item.qty > item.book.inStockNumber) {
+        if(item.qty > item.item.inStockNumber) {
           console.log("not enough stock");
 
           this.notEnoughStock = true;
